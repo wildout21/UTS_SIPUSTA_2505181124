@@ -8,7 +8,7 @@ package model;
  *
  * @author LENOVO
  */
-public class Majalah extends KoleksiPustaka implements Terarsip {
+public class Majalah extends Koleksi implements Terarsip {
     private int edisi;
     private String bulanTerbit;
     private String nomorRak;
@@ -47,6 +47,11 @@ public class Majalah extends KoleksiPustaka implements Terarsip {
     @Override
     public String lokasiLantai() {
         return "Lantai 2 - Ruang Referensi & Berkala";
+    }
+
+    @Override
+    public String ringkasanArsip() {
+        return "Rak: " + nomorRak + " (" + lokasiLantai() + ")";
     }
 
     @Override

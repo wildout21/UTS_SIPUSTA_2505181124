@@ -8,7 +8,7 @@ package model;
  *
  * @author LENOVO
  */
-public class BerkasDigital extends KoleksiPustaka {
+public class BerkasDigital extends Koleksi {
     private double ukuranMB;
     private String tautanUnduh;
 

@@ -9,13 +9,13 @@ package model;
  * @author LENOVO
  */
 
-public abstract class KoleksiPustaka {
+public abstract class Koleksi{
     private String kodeKoleksi;
     private String judul;
     private int tahunTerbit;
     private boolean sedangDipinjam;
 
-    public KoleksiPustaka(String kodeKoleksi, String judul, int tahunTerbit) {
+    public Koleksi(String kodeKoleksi, String judul, int tahunTerbit) {
         this.kodeKoleksi = kodeKoleksi;
         this.judul = judul;
         this.tahunTerbit = tahunTerbit;
@@ -47,5 +47,4 @@ public abstract class KoleksiPustaka {
     public String deskripsi() {
         return "Kode: " + kodeKoleksi + ", Judul: \"" + judul + "\" (" + tahunTerbit + ")";
     }
-}
 }

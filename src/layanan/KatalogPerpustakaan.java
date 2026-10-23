@@ -4,7 +4,7 @@
  */
 package layanan;
 
-import model.KoleksiPustaka;
+import model.Koleksi;
 import eksepsi.KoleksiSedangDipinjamException;
 import eksepsi.KoleksiTidakLayakException;
 import eksepsi.PustakaException;
@@ -14,36 +14,36 @@ import java.util.Comparator;
 import java.util.List;
 
 public class KatalogPerpustakaan {
-    private List<KoleksiPustaka> daftarKoleksi;
+    private List<Koleksi> daftarKoleksi;
 
     public KatalogPerpustakaan() {
         this.daftarKoleksi = new ArrayList<>();
     }
 
-    public void tambahKoleksi(KoleksiPustaka koleksi) {
+    public void tambahKoleksi(Koleksi koleksi) {
         daftarKoleksi.add(koleksi);
     }
 
-    public List<KoleksiPustaka> getDaftarKoleksi() {
+    public List<Koleksi> getDaftarKoleksi() {
         return daftarKoleksi;
     }
 
     public void cetakStatus() {
         System.out.println("=== STATUS KATALOG PERPUSTAKAAN ===");
-        for (KoleksiPustaka k : daftarKoleksi) {
+        for (Koleksi k : daftarKoleksi) {
             System.out.println(k.deskripsi());
             System.out.println("-> Status Layak Pinjam: " + (k.cekKelayakanPinjam() ? "LAYAK" : "TIDAK LAYAK"));
             System.out.println("--------------------------------------------------------------------------------");
         }
     }
 
-    public void urut(Comparator<KoleksiPustaka> comparator) {
+    public void urut(Comparator<Koleksi> comparator) {
         daftarKoleksi.sort(comparator);
     }
 
     public void pinjam(String kodeKoleksi) throws PustakaException {
-        KoleksiPustaka target = null;
-        for (KoleksiPustaka k : daftarKoleksi) {
+        Koleksi target = null;
+        for (Koleksi k : daftarKoleksi) {
             if (k.getKodeKoleksi().equalsIgnoreCase(kodeKoleksi)) {
                 target = k;
                 break;

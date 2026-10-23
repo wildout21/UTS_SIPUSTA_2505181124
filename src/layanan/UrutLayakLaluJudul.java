@@ -4,12 +4,12 @@
  */
 package layanan;
 
-import model.KoleksiPustaka;
+import model.Koleksi;
 import java.util.Comparator;
 
-public class UrutLayakLaluJudul implements Comparator<KoleksiPustaka> {
+public class UrutLayakLaluJudul implements Comparator<Koleksi> {
     @Override
-    public int compare(KoleksiPustaka k1, KoleksiPustaka k2) {
+    public int compare(Koleksi k1, Koleksi k2) {
         Boolean layak1 = k1.cekKelayakanPinjam();
         Boolean layak2 = k2.cekKelayakanPinjam();
         

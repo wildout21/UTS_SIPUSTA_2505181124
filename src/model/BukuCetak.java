@@ -8,7 +8,7 @@ package model;
  *
  * @author LENOVO
  */
-public class BukuCetak extends KoleksiPustaka implements Terarsip {
+public class BukuCetak extends Koleksi implements Terarsip {
     private int jumlahHalaman;
     private String nomorRak;
     private boolean sedangDiperbaiki;
@@ -44,8 +44,12 @@ public class BukuCetak extends KoleksiPustaka implements Terarsip {
     }
 
     @Override
+    public String ringkasanArsip() {
+        return "Rak: " + nomorRak + " (" + lokasiLantai() + ")";
+    }
+
+    @Override
     public String deskripsi() {
         return super.deskripsi() + " | Buku Cetak - Halaman: " + jumlahHalaman + ", " + ringkasanArsip() + ", Perbaikan: " + (sedangDiperbaiki ? "Ya" : "Tidak");
     }
-}
 }
